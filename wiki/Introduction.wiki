@@ -1,4 +1,4 @@
-#Présentation du projet MacaronDB 
+Présentation du projet MacaronDB 
 
 MacaronDB contient un jeu de classes permettant de simplifier l'exécution de requêtes SQL, et la manipulation des jeux de données renvoyés par ces requêtes.
 
@@ -33,24 +33,24 @@ $data = $cnx_db01->selectKeyValuePairs( $sql );
 
 Les différentes méthodes à votre disposition sont les suivantes :
 
-function selectOne($sql, $args = array(), $fetch_mode_num = false);
-function selectBlock($sql, $args = array());
-function selectKeyValuePairs($sql, $args = array());
-function executeCommand($sql, $args = array(), $count_nb_rows = true);
-function callProcedure($proc_name, $proc_schema, &$args = array(), $return_resultset = false);
-function getStatement($sql, $args = array());
-function getFetchAssoc($st);
-function getPagination($sql, $args, $offset, $nbl_by_page, $order_by = '');
-function getScrollCursor($sql, $args, $offset, $nbl_by_page, $order_by = '' ) ;
-function export2CSV($sql, $args = array());
-function export2XML($sql, $args = array(), $tag_line = '', $gen_header=true) ;
-function export2insertSQL($sql, $args = array());
-function getLastInsertId($sequence = '');
-function valueIsExisting($table, $nomcol, $valcol, $where_optionnel = '');
-function valueIsExistingOnOtherRecord($table, $nomcol, $valcol, $idencours, $where_optionnel = '');
-function getInfoDatabase();
-function countNbRowsFromTable($table, $schema = '');
-function countNbRowsFromSQL($sql, $args = array());
+- function selectOne($sql, $args = array(), $fetch_mode_num = false);
+- function selectBlock($sql, $args = array());
+- function selectKeyValuePairs($sql, $args = array());
+- function executeCommand($sql, $args = array(), $count_nb_rows = true);
+- function callProcedure($proc_name, $proc_schema, &$args = array(), $return_resultset = false);
+- function getStatement($sql, $args = array());
+- function getFetchAssoc($st);
+- function getPagination($sql, $args, $offset, $nbl_by_page, $order_by = '');
+- function getScrollCursor($sql, $args, $offset, $nbl_by_page, $order_by = '' ) ;
+- function export2CSV($sql, $args = array());
+- function export2XML($sql, $args = array(), $tag_line = '', $gen_header=true) ;
+- function export2insertSQL($sql, $args = array());
+- function getLastInsertId($sequence = '');
+- function valueIsExisting($table, $nomcol, $valcol, $where_optionnel = '');
+- function valueIsExistingOnOtherRecord($table, $nomcol, $valcol, $idencours, $where_optionnel = '');
+- function getInfoDatabase();
+- function countNbRowsFromTable($table, $schema = '');
+- function countNbRowsFromSQL($sql, $args = array());
 
 Je reviendrai plus en détail sur ces méthodes, mais il me semble que leurs noms, et leurs paramètres, peuvent d'ores et déjà vous donner quelques indications sur la manière de les utiliser.
 
