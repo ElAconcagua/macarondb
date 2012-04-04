@@ -5,6 +5,7 @@ MacaronDB contient un jeu de classes permettant de simplifier l'exécution de re
 Par exemple, pour exécuter une requête SQL ne renvoyant qu'une seule ligne, vous pouvez écrire ceci :
 
 $sql = 'select code, description from mytable where code1 = ? and code2 = ?';
+
 $data = $cnx_db01->selectOne ( $sql, array ($value1, $value2 ) );
 
 Dans l'exemple ci-dessus, la variable $data contient un tableau associatif à une dimension contenant les données retournées par SQL (si tout s'est bien passé). En revanche, si la requête n'a pas abouti, la variable $data contiendra le booléen "false".
@@ -20,6 +21,7 @@ $data = $cnx_db01->selectOne ( $sql, array ($value1, $value2 ), true );
 Si votre requête est susceptible de renvoyer de 1 à X lignes, alors c'est la méthode "selectBlock" qu'il vous faut. Exemple :
 
 $sql = 'select code, description from mytable where code1 = ? and code2 = ?';
+
 $data = $cnx_db01->selectBlock ( $sql, array ($value1, $value2 ) );
 
 Dans l'exemple ci-dessus, $data contiendra un tableau associatif à 2 dimensions, si tout s'est bien passé, ou "false" dans le cas contraire.
@@ -27,8 +29,8 @@ Dans l'exemple ci-dessus, $data contiendra un tableau associatif à 2 dimensions
 Si vous souhaitez récupérer un jeu de données sous la forme d'un tableau à deux dimensions, facile à utiliser pour la génération de champs de formulaire de type "select" (liste déroulante), alors vous apprécierez sûrement la méthode selectKeyValuePairs() qui s'utilise de la façon suivante :
 
 $sql = 'select code, description from mytable';
-$data = $cnx_db01->selectKeyValuePairs( $sql );
 
+$data = $cnx_db01->selectKeyValuePairs( $sql );
 
 
 Les différentes méthodes à votre disposition sont les suivantes :
